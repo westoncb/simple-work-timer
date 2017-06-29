@@ -23,7 +23,7 @@ $(document).ready(function() {
 
   function init() {
     $('.hour-btn').click(function() {
-      secondsRemaining += 0.002 * 60 * 60;
+      secondsRemaining += 1 * 60 * 60;
       finished = false;
       keypressListener.focus();
     });

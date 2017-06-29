@@ -23,7 +23,7 @@ $(document).ready(function() {
 
   function init() {
     $('.hour-btn').click(function() {
-      secondsRemaining += 1 * 60 * 60;
+      secondsRemaining += 0.002 * 60 * 60;
       finished = false;
       keypressListener.focus();
     });
@@ -46,6 +46,8 @@ $(document).ready(function() {
     if (secondsRemaining < 0 && !finished) {
       secondsRemaining = 0;
       finished = true;
+      
+      doFinishNotification();
     }
 ;
     var hours = Math.floor(secondsRemaining / 60 / 60);
@@ -62,5 +64,13 @@ $(document).ready(function() {
 
     lastRender = timestamp
     window.requestAnimationFrame(loop)
+  }
+
+  function doFinishNotification() {
+    var audio = new Audio('time.wav');
+    audio.play();
+    window.setTimeout(function() {
+      alert("It's that time!");
+    }, 4000);
   }
 });

@@ -1,14 +1,55 @@
 body {
-  background-color: #333;
+  background-color: #555;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+button {
+  width: 150px;
+  height: 75px;
+  font-size: 32px;
+  padding: 0;
+  font-family: 'Jaldi', sans-serif;
+  border: 1px solid black;
+}
+
+button:active {
+  background-color: #888;
+}
+
+button:focus {
+    outline: none;
+}
+
+.spacer {
+  height: 15px;
+}
+
+.pause {
+  display: none;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50px;
+  top: 50px;
+}
+
 .timer {
-  font-family: 'Raleway', sans-serif;
-  font-size: 42;
-  font-weight: bold;
-  color: #ebe46a;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: 'Lobster', cursive;
+  font-size: 120px;
+  color: #f2f1c2;
+}
+
+.buttons-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.clock-text {
+  width: 525px;
 }

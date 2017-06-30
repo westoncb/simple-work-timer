@@ -6,18 +6,6 @@ $(document).ready(function() {
 
   var finished = true;
   var paused = false;
-
-  var keypressListener = $('.keypress-listener');
-  keypressListener.focus();
-  keypressListener.keypress(function() {
-    paused = !paused;
-
-    if (paused) {
-      $('.pause').css('display', 'block');
-    } else {
-      $('.pause').css('display', 'none');
-    }
-  });
   
   init();
 
@@ -32,7 +20,23 @@ $(document).ready(function() {
       secondsRemaining += 0.5 * 60 * 60;
       finished = false;
       keypressListener.focus();
-    })
+    });
+
+    var keypressListener = $('.keypress-listener');
+    keypressListener.focus();
+    keypressListener.keypress(function() {
+      paused = !paused;
+
+      if (paused) {
+        $('.pause').css('display', 'block');
+      } else {
+        $('.pause').css('display', 'none');
+      }
+    });
+
+    $(document).click(function() {
+      keypressListener.focus();
+    });
 
     window.requestAnimationFrame(loop)
   }

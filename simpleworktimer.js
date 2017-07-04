@@ -1,6 +1,7 @@
+const ipcRenderer = require('electron').ipcRenderer;
+
 $(document).ready(function() {
 
-  var lastRender = 0
   var msPassed = 0;
   var secondsRemaining = 0;
 
@@ -38,7 +39,7 @@ $(document).ready(function() {
       keypressListener.focus();
     });
 
-    window.requestAnimationFrame(loop)
+    setInterval(loop, 50);
   }
 
   function update(progress) {
@@ -61,20 +62,15 @@ $(document).ready(function() {
     $('.clock-text').text(hours + " : " + minutes + " : " + seconds);
   }
 
-  function loop(timestamp) {
-    var progress = timestamp - lastRender
+  function loop() {
+    var progress = 50;
 
     update(progress)
-
-    lastRender = timestamp
-    window.requestAnimationFrame(loop)
   }
 
   function doFinishNotification() {
     var audio = new Audio('time.wav');
     audio.play();
-    window.setTimeout(function() {
-      alert("It's that time!");
-    }, 4000);
+    ipcRenderer.send('forefront');
   }
 });

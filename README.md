@@ -3,8 +3,11 @@ A simple timer for keeping track of how long you've been on the computer. The on
 To run:
 
 cd to cloned directory
+
 npm install electron (if you don't already have it installed)
+
 npm install
+
 electron .
 
 (I think this is correct, but it should be verified...)

@@ -4,11 +4,11 @@ To run:
 
 cd to cloned directory
 
-npm install electron (if you don't already have it installed)
+`npm install electron` (if you don't already have it installed)
 
-npm install
+`npm install`
 
-electron .
+`electron .`
 
 (I think this is correct, but it should be verified...)
 

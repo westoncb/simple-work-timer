@@ -1,4 +1,4 @@
-A simple timer for keeping track of how long you've been on the computer. The only controls are play/pause (toggled by pressing spacebar), and adding either 1 hour or half an hour of time.
+A simple timer for reminding yourself to get off the computer after a certain amount of time passes. The only controls are play/pause (toggled by pressing spacebar), and adding either 1 hour or half an hour of time.
 
 To run:
 
